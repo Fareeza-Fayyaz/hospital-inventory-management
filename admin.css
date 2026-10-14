@@ -1,0 +1,1911 @@
+.him-wrap .him-card{background:#fff;border:1px solid #dcdcde;border-radius:8px;padding:18px;margin:16px 0;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.him-grid{display:grid;grid-template-columns:repeat(3,minmax(220px,1fr));gap:16px}.him-grid.one{grid-template-columns:1fr}.him-two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}.him-form label,.him-search-form label{display:flex;flex-direction:column;font-weight:600;color:#1d2327}.him-form label span,.him-search-form label span{margin-bottom:6px}.him-form input,.him-form select,.him-form textarea,.him-search-form input,.him-search-form select{width:100%;max-width:100%;min-height:38px}.him-form textarea{min-height:95px}.him-image-preview{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.him-image-preview img{width:70px;height:70px;object-fit:cover;border:1px solid #ddd;border-radius:6px}.him-thumb img{width:55px;height:55px;object-fit:cover;border-radius:6px}.him-detail-row{display:none;background:#f6f7f7}.him-detail-row td{padding:16px!important;line-height:1.8}.table-scroll{overflow-x:auto}.him-table th,.him-table td{vertical-align:middle}.button-danger{border-color:#b32d2e!important;color:#b32d2e!important}.him-qr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}.him-qr-card{background:#fff;border:1px solid #dcdcde;border-radius:10px;padding:16px;text-align:center}.him-qr-card h3{margin:8px 0}.him-serial{font-weight:700;margin-bottom:8px;font-size:16px}.him-qr-canvas{width:230px;height:auto;border:1px solid #eee;background:#fff}.him-searchable{height:38px}@media(max-width:900px){.him-grid,.him-two-col{grid-template-columns:1fr}}
+
+/* Frontend shortcode layout */
+.him-frontend-wrap{display:flex;align-items:flex-start;gap:22px;width:100%;max-width:1300px;margin:20px auto;padding:0;box-sizing:border-box}
+.him-front-sidebar{width:240px;min-width:220px;background:#ffffff;border:1px solid #e5e7eb;border-radius:14px;box-shadow:0 8px 24px rgba(15,23,42,.08);padding:14px;position:sticky;top:24px;box-sizing:border-box}
+.him-front-title{font-size:20px;font-weight:800;color:#111827;padding:12px 14px;margin-bottom:10px;border-bottom:1px solid #eef2f7}
+.him-front-tab{display:flex;align-items:center;gap:8px;text-decoration:none!important;color:#374151!important;background:#f9fafb;border:1px solid transparent;border-radius:10px;padding:12px 14px;margin:8px 0;font-weight:700;transition:all .18s ease}
+.him-front-tab:hover{background:#eef2ff;color:#1d4ed8!important;border-color:#dbeafe;transform:translateX(2px)}
+.him-front-tab.active{background:#1d4ed8;color:#fff!important;border-color:#1d4ed8;box-shadow:0 8px 16px rgba(29,78,216,.22)}
+.him-front-content{flex:1;min-width:0;background:#f8fafc;border:1px solid #e5e7eb;border-radius:14px;padding:18px;box-sizing:border-box;box-shadow:0 8px 24px rgba(15,23,42,.05)}
+.him-front-content>.wrap,.him-front-content .wrap{margin:0;padding:0;max-width:100%}
+.him-front-content h1{margin-top:0!important;font-size:28px;line-height:1.25;color:#111827}
+.him-front-content .him-card,.him-front-content .him-qr-card{border-color:#e5e7eb;box-shadow:0 3px 14px rgba(15,23,42,.05)}
+.him-front-content .button,.him-front-content button{border-radius:8px}
+.him-front-content .button-primary{background:#1d4ed8!important;border-color:#1d4ed8!important;color:#fff!important}
+.him-front-content .table-scroll{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:4px}
+@media(max-width:900px){.him-frontend-wrap{flex-direction:column}.him-front-sidebar{position:relative;top:auto;width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.him-front-title{grid-column:1/-1}.him-front-tab{margin:0}.him-front-content{width:100%}}
+@media(max-width:560px){.him-front-sidebar{grid-template-columns:1fr}.him-grid{grid-template-columns:1fr!important}}
+
+/* Management inline view inside Inventory column */
+.him-inventory-cell{min-width:340px;max-width:760px}
+.him-inventory-name{font-weight:700;color:#1d2327;margin-bottom:8px}
+.him-inline-detail{display:none;background:#f8fafc;border:1px solid #dbe3ef;border-radius:10px;margin-top:10px;padding:14px;box-shadow:0 4px 16px rgba(15,23,42,.06)}
+.him-detail-title{font-size:15px;font-weight:800;color:#111827;margin:0 0 10px;border-bottom:1px solid #e5e7eb;padding-bottom:8px}
+.him-detail-grid{display:grid;grid-template-columns:repeat(2,minmax(180px,1fr));gap:10px;margin-bottom:14px}
+.him-detail-item{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:9px;line-height:1.45}
+.him-detail-item strong{display:block;color:#374151;font-size:12px;text-transform:uppercase;letter-spacing:.02em;margin-bottom:4px}
+.him-detail-item span{display:block;color:#111827;font-size:13px;word-break:break-word}
+.him-detail-images{grid-column:1/-1}.him-view-images{display:flex;gap:8px;flex-wrap:wrap}.him-view-images img{width:62px;height:62px;object-fit:cover;border:1px solid #ddd;border-radius:6px}
+.him-inline-qr-card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:12px;text-align:center;margin-top:12px}
+.him-inline-qr-canvas{width:220px;height:auto;border:1px solid #eee;background:#fff;margin-bottom:8px}
+.him-view-btn.active{background:#1d4ed8!important;border-color:#1d4ed8!important;color:#fff!important}
+@media(max-width:900px){.him-detail-grid{grid-template-columns:1fr}.him-inventory-cell{min-width:260px}}
+
+
+/* v1.5 QR Code frontend compact grid: 4 QR cards per row */
+.him-wrap .him-qr-grid,
+.him-front-content .him-qr-grid{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:14px!important;
+  align-items:start!important;
+}
+.him-wrap .him-qr-card,
+.him-front-content .him-qr-card{
+  width:auto!important;
+  max-width:none!important;
+  padding:12px!important;
+  border-radius:10px!important;
+  text-align:center!important;
+}
+.him-wrap .him-qr-card label,
+.him-front-content .him-qr-card label{
+  display:flex!important;
+  justify-content:center!important;
+  align-items:center!important;
+  gap:5px!important;
+  font-size:13px!important;
+  margin-bottom:6px!important;
+}
+.him-wrap .him-qr-card h3,
+.him-front-content .him-qr-card h3{
+  font-size:15px!important;
+  line-height:1.2!important;
+  margin:6px 0!important;
+  word-break:break-word!important;
+}
+.him-wrap .him-serial,
+.him-front-content .him-serial{
+  font-size:13px!important;
+  margin-bottom:6px!important;
+  word-break:break-word!important;
+}
+.him-wrap .him-qr-canvas,
+.him-front-content .him-qr-canvas{
+  width:145px!important;
+  max-width:100%!important;
+  height:auto!important;
+}
+@media(max-width:1100px){
+  .him-wrap .him-qr-grid,
+  .him-front-content .him-qr-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;}
+}
+@media(max-width:760px){
+  .him-wrap .him-qr-grid,
+  .him-front-content .him-qr-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+}
+@media(max-width:480px){
+  .him-wrap .him-qr-grid,
+  .him-front-content .him-qr-grid{grid-template-columns:1fr!important;}
+}
+
+/* v1.7 Frontend width + responsive improvements */
+.him-frontend-wrap{
+  max-width:1240px!important;
+  gap:14px!important;
+  padding:0 10px!important;
+}
+.him-front-sidebar{
+  width:190px!important;
+  min-width:190px!important;
+  padding:10px!important;
+  border-radius:12px!important;
+}
+.him-front-title{
+  font-size:18px!important;
+  padding:10px 10px!important;
+}
+.him-front-tab{
+  padding:10px 12px!important;
+  font-size:14px!important;
+  border-radius:9px!important;
+}
+.him-front-content{
+  padding:16px!important;
+  overflow:hidden!important;
+}
+.him-front-content h1{
+  font-size:26px!important;
+}
+.him-front-content .table-scroll{
+  overflow-x:auto!important;
+  -webkit-overflow-scrolling:touch!important;
+  width:100%!important;
+}
+.him-front-content .him-table{
+  width:100%!important;
+  table-layout:auto!important;
+  border-collapse:collapse!important;
+}
+.him-front-content .him-table th,
+.him-front-content .him-table td{
+  padding:9px 8px!important;
+  font-size:13px!important;
+  line-height:1.35!important;
+  white-space:normal!important;
+}
+.him-front-content .him-table th:nth-child(1),
+.him-front-content .him-table td:nth-child(1){width:34px!important;text-align:center!important;}
+.him-front-content .him-table th:nth-child(2),
+.him-front-content .him-table td:nth-child(2){width:54px!important;text-align:center!important;}
+.him-front-content .him-inventory-cell{
+  min-width:120px!important;
+  max-width:260px!important;
+}
+.him-front-content .him-thumb img{
+  width:48px!important;
+  height:48px!important;
+}
+.him-front-content .him-table td:last-child{
+  min-width:160px!important;
+  white-space:normal!important;
+}
+.him-front-content .him-table td:last-child .button,
+.him-front-content .him-table td:last-child button{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  min-height:30px!important;
+  padding:4px 9px!important;
+  margin:2px!important;
+  font-size:12px!important;
+  line-height:1.2!important;
+}
+.him-front-content .him-grid{
+  grid-template-columns:repeat(3,minmax(160px,1fr))!important;
+  gap:12px!important;
+}
+.him-front-content .him-two-col{
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:14px!important;
+}
+.him-front-content .him-card{
+  padding:14px!important;
+}
+.him-front-content input,
+.him-front-content select,
+.him-front-content textarea{
+  max-width:100%!important;
+  box-sizing:border-box!important;
+}
+
+@media(max-width:1024px){
+  .him-frontend-wrap{max-width:100%!important;gap:12px!important;}
+  .him-front-sidebar{width:170px!important;min-width:170px!important;}
+  .him-front-content .him-grid{grid-template-columns:repeat(2,minmax(150px,1fr))!important;}
+  .him-front-content .him-two-col{grid-template-columns:1fr!important;}
+  .him-front-content .him-table{min-width:760px!important;}
+}
+@media(max-width:780px){
+  .him-frontend-wrap{flex-direction:column!important;margin:12px auto!important;padding:0 8px!important;}
+  .him-front-sidebar{
+    position:relative!important;
+    top:auto!important;
+    width:100%!important;
+    min-width:0!important;
+    display:grid!important;
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    gap:7px!important;
+  }
+  .him-front-title{grid-column:1/-1!important;margin-bottom:2px!important;}
+  .him-front-tab{margin:0!important;text-align:center!important;justify-content:center!important;padding:9px 6px!important;font-size:13px!important;}
+  .him-front-content{width:100%!important;padding:12px!important;}
+  .him-front-content h1{font-size:22px!important;}
+  .him-front-content .him-grid{grid-template-columns:1fr!important;}
+  .him-front-content .him-table{min-width:720px!important;}
+}
+@media(max-width:520px){
+  .him-front-sidebar{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+  .him-front-content{padding:10px!important;border-radius:10px!important;}
+  .him-front-content .button,
+  .him-front-content button{width:auto!important;max-width:100%!important;}
+  .him-front-content .him-table{min-width:680px!important;}
+  .him-front-content .him-qr-grid{grid-template-columns:1fr!important;}
+  .him-front-content .him-inline-qr-canvas{width:180px!important;}
+}
+
+/* v1.8 Detail page view restored in new tab */
+.him-detail-page-wrap .him-detail-page-card{padding:22px!important;}
+.him-detail-page-head{display:flex!important;justify-content:space-between!important;align-items:flex-start!important;gap:24px!important;margin-bottom:22px!important;border-bottom:1px solid #e5e7eb!important;padding-bottom:18px!important;}
+.him-detail-page-head h2{margin:0 0 8px!important;font-size:26px!important;line-height:1.25!important;}
+.him-detail-page-grid{grid-template-columns:repeat(3,minmax(180px,1fr))!important;margin-bottom:18px!important;}
+.him-detail-page-card h2{margin:22px 0 12px!important;font-size:20px!important;}
+.him-detail-page-qr{text-align:center!important;min-width:290px!important;padding:14px!important;border:1px solid #e5e7eb!important;border-radius:12px!important;background:#fff!important;}
+.him-detail-page-images{display:flex!important;gap:12px!important;flex-wrap:wrap!important;}
+.him-detail-page-images img{width:140px!important;height:110px!important;object-fit:cover!important;border:1px solid #ddd!important;border-radius:8px!important;}
+.him-view-link{font-weight:600!important;}
+@media(max-width:900px){
+  .him-detail-page-head{flex-direction:column!important;}
+  .him-detail-page-qr{min-width:0!important;width:100%!important;}
+  .him-detail-page-grid{grid-template-columns:repeat(2,minmax(160px,1fr))!important;}
+}
+@media(max-width:560px){
+  .him-detail-page-grid{grid-template-columns:1fr!important;}
+  .him-detail-page-images img{width:100%!important;height:auto!important;}
+}
+
+
+/* v1.9 Compact detail page + no huge empty space */
+.him-detail-page-wrap{
+  max-width:1120px!important;
+  margin-left:20px!important;
+  margin-right:auto!important;
+}
+.him-detail-page-wrap .him-detail-page-card{
+  padding:18px!important;
+  max-width:1080px!important;
+}
+.him-detail-page-head{
+  justify-content:flex-start!important;
+  align-items:flex-start!important;
+  gap:28px!important;
+  margin-bottom:14px!important;
+  padding-bottom:14px!important;
+}
+.him-detail-page-head>div:first-child{
+  width:360px!important;
+  max-width:100%!important;
+}
+.him-detail-page-head h2{
+  font-size:22px!important;
+  margin-bottom:6px!important;
+}
+.him-detail-page-qr{
+  min-width:250px!important;
+  width:250px!important;
+  padding:10px!important;
+}
+.him-detail-page-qr .him-detail-title{
+  margin-bottom:8px!important;
+}
+.him-detail-page-qr .him-inline-qr-canvas{
+  width:200px!important;
+}
+.him-detail-page-card h2{
+  margin:16px 0 10px!important;
+  font-size:18px!important;
+}
+.him-detail-page-grid{
+  gap:8px!important;
+  margin-bottom:12px!important;
+}
+.him-detail-page-grid .him-detail-item{
+  padding:8px!important;
+}
+@media(max-width:900px){
+  .him-detail-page-wrap{margin-left:0!important;max-width:100%!important;}
+  .him-detail-page-head{gap:14px!important;}
+  .him-detail-page-head>div:first-child{width:100%!important;}
+  .him-detail-page-qr{width:100%!important;min-width:0!important;}
+}
+
+
+/* v2.0 QR page layout fix: buttons on top, QR cards start below, 4 per row */
+.him-qr-page{display:block!important;width:100%!important;clear:both!important;}
+.him-qr-actions{display:flex!important;align-items:center!important;justify-content:flex-start!important;gap:8px!important;flex-wrap:wrap!important;width:100%!important;margin:0 0 18px!important;padding:0!important;clear:both!important;}
+.him-qr-actions .button{margin:0!important;float:none!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;white-space:nowrap!important;}
+.him-qr-page .him-qr-grid{clear:both!important;width:100%!important;margin-top:0!important;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:16px!important;}
+.him-front-content .him-qr-page .him-qr-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;}
+.him-qr-page .him-qr-card{min-width:0!important;margin:0!important;box-sizing:border-box!important;}
+@media(max-width:1100px){.him-qr-page .him-qr-grid,.him-front-content .him-qr-page .him-qr-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;}}
+@media(max-width:760px){.him-qr-page .him-qr-grid,.him-front-content .him-qr-page .him-qr-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}.him-qr-actions{gap:6px!important;}}
+@media(max-width:480px){.him-qr-page .him-qr-grid,.him-front-content .him-qr-page .him-qr-grid{grid-template-columns:1fr!important;}.him-qr-actions .button{width:100%!important;}}
+
+/* v2.1 Management inventory summary + top delete button */
+.him-management-actions{
+  display:flex!important;
+  justify-content:space-between!important;
+  align-items:center!important;
+  gap:12px!important;
+  margin:10px 0 14px!important;
+  width:100%!important;
+}
+.him-management-actions .button{
+  margin:0!important;
+}
+.him-delete-selected-top{
+  color:#b32d2e!important;
+  border-color:#b32d2e!important;
+  background:#fff!important;
+}
+.him-delete-selected-top:hover{
+  color:#fff!important;
+  background:#b32d2e!important;
+  border-color:#b32d2e!important;
+}
+.him-inventory-summary{
+  line-height:1.55!important;
+  font-size:13px!important;
+  color:#374151!important;
+  min-width:190px!important;
+}
+.him-inventory-summary .him-inventory-name{
+  font-size:14px!important;
+  font-weight:800!important;
+  color:#111827!important;
+  margin-bottom:5px!important;
+}
+.him-inventory-summary strong{
+  font-weight:700!important;
+  color:#111827!important;
+}
+.him-table th:nth-child(3),
+.him-table td:nth-child(3){
+  min-width:220px!important;
+}
+.him-table th:last-child,
+.him-table td:last-child{
+  min-width:170px!important;
+}
+@media(max-width:640px){
+  .him-management-actions{
+    flex-direction:column!important;
+    align-items:stretch!important;
+  }
+  .him-management-actions .button{
+    width:100%!important;
+    text-align:center!important;
+  }
+}
+
+/* v2.2 View added-by info + smaller detail QR */
+.him-detail-page-qr{
+  width:220px!important;
+  min-width:220px!important;
+  padding:8px!important;
+}
+.him-detail-page-qr .him-inline-qr-canvas{
+  width:170px!important;
+  max-width:100%!important;
+  height:auto!important;
+}
+.him-detail-page-qr .button{
+  padding:2px 10px!important;
+  min-height:30px!important;
+  font-size:12px!important;
+}
+.him-detail-page-qr .him-detail-title{
+  font-size:14px!important;
+  margin-bottom:6px!important;
+}
+@media(max-width:900px){
+  .him-detail-page-qr{width:100%!important;min-width:0!important;}
+}
+.him-public-file-input{display:block;margin-top:8px;max-width:100%;}
+.him-image-field small{display:block;margin-top:5px;color:#667085;font-size:12px;}
+
+/* v2.4 Frontend Add New form layout fix */
+.him-front-content .him-form,
+.him-front-content .him-form *{
+  box-sizing:border-box!important;
+}
+.him-front-content .him-card{
+  overflow:hidden!important;
+  max-width:100%!important;
+}
+.him-front-content .him-two-col{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+  gap:14px!important;
+  align-items:start!important;
+  width:100%!important;
+}
+.him-front-content .him-two-col > .him-card{
+  min-width:0!important;
+  width:100%!important;
+  margin:0!important;
+}
+.him-front-content .him-grid.one,
+.him-front-content .him-two-col .him-grid.one{
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  gap:12px!important;
+  width:100%!important;
+}
+.him-front-content .him-form label,
+.him-front-content .him-search-form label{
+  min-width:0!important;
+  width:100%!important;
+}
+.him-front-content .him-form input,
+.him-front-content .him-form select,
+.him-front-content .him-form textarea,
+.him-front-content .him-search-form input,
+.him-front-content .him-search-form select,
+.him-front-content .him-search-form textarea{
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  display:block!important;
+}
+.him-front-content .him-form textarea{
+  resize:vertical!important;
+}
+.him-front-content .him-form p{
+  margin:4px 0 0!important;
+  line-height:1.55!important;
+  word-break:break-word!important;
+  overflow-wrap:anywhere!important;
+}
+.him-front-content .him-form .submit,
+.him-front-content .him-form p.submit{
+  width:100%!important;
+  max-width:100%!important;
+  clear:both!important;
+  margin-top:16px!important;
+  padding:0!important;
+}
+.him-front-content .him-form .submit .button,
+.him-front-content .him-form p.submit .button{
+  width:100%!important;
+  min-height:42px!important;
+  text-align:center!important;
+  justify-content:center!important;
+}
+@media(max-width:900px){
+  .him-front-content .him-two-col{
+    grid-template-columns:1fr!important;
+  }
+}
+@media(max-width:520px){
+  .him-front-content .him-card h2{
+    font-size:18px!important;
+    line-height:1.25!important;
+  }
+  .him-front-content .him-form input,
+  .him-front-content .him-form select,
+  .him-front-content .him-form textarea{
+    font-size:14px!important;
+  }
+}
+
+/* v2.5 Add New form inner sections row-wise layout */
+.him-front-content .him-status-card,
+.him-front-content .him-focal-card,
+.him-status-card,
+.him-focal-card{
+  overflow:hidden!important;
+}
+.him-status-grid,
+.him-focal-grid{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:12px!important;
+  align-items:start!important;
+  width:100%!important;
+}
+.him-status-grid label,
+.him-focal-grid label{
+  min-width:0!important;
+  width:100%!important;
+  box-sizing:border-box!important;
+}
+.him-status-grid input,
+.him-status-grid select,
+.him-status-grid textarea,
+.him-focal-grid input,
+.him-focal-grid select,
+.him-focal-grid textarea{
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  box-sizing:border-box!important;
+}
+.him-status-grid textarea,
+.him-focal-grid textarea{
+  min-height:86px!important;
+}
+.him-status-grid p{
+  min-width:0!important;
+  margin:25px 0 0!important;
+  padding:10px!important;
+  background:#f8fafc!important;
+  border:1px dashed #cbd5e1!important;
+  border-radius:8px!important;
+  line-height:1.45!important;
+  font-size:13px!important;
+  overflow-wrap:anywhere!important;
+  word-break:normal!important;
+}
+@media(max-width:1180px){
+  .him-status-grid,
+  .him-focal-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+}
+@media(max-width:900px){
+  .him-status-grid,
+  .him-focal-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+}
+@media(max-width:560px){
+  .him-status-grid,
+  .him-focal-grid{grid-template-columns:1fr!important;}
+  .him-status-grid p{margin-top:0!important;}
+}
+
+/* Service history */
+.him-service-history-table{min-width:720px;margin-top:8px}
+.him-service-history-detail{grid-column:1/-1}
+.him-service-history-detail .table-scroll{margin-top:8px;width:100%}
+
+/* v2.7 inventory updates */
+.him-mini-qr-card{display:flex;align-items:center;justify-content:center;min-width:72px}
+.him-mini-qr-canvas{width:64px!important;height:auto!important;border:1px solid #eee;background:#fff;border-radius:4px}
+.him-qr-hospital{font-size:12px;font-weight:600;color:#374151;margin:0 0 4px;word-break:break-word}
+.him-confirm-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:999999;display:flex;align-items:center;justify-content:center;padding:18px;box-sizing:border-box}
+.him-confirm-box{background:#fff;max-width:430px;width:100%;border-radius:12px;box-shadow:0 18px 45px rgba(0,0,0,.25);padding:22px;text-align:center}
+.him-confirm-box h3{margin:0 0 18px;font-size:18px;line-height:1.4;color:#111827}
+.him-confirm-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.him-form input[readonly]{background:#f6f7f7;color:#50575e;cursor:not-allowed}
+.him-make-other-field{display:flex}
+
+/* v2.7.1 Management table compact columns + single serial column */
+.him-wrap .him-table th,
+.him-wrap .him-table td{
+  padding:8px 7px!important;
+  vertical-align:middle!important;
+}
+.him-wrap .him-table th:nth-child(1),
+.him-wrap .him-table td:nth-child(1){
+  width:32px!important;
+  min-width:32px!important;
+  max-width:32px!important;
+  text-align:center!important;
+}
+.him-wrap .him-table th:nth-child(2),
+.him-wrap .him-table td:nth-child(2){
+  width:95px!important;
+  min-width:80px!important;
+  max-width:110px!important;
+  white-space:nowrap!important;
+}
+.him-wrap .him-table th:nth-child(3),
+.him-wrap .him-table td:nth-child(3){
+  width:95px!important;
+  min-width:80px!important;
+  max-width:120px!important;
+  white-space:nowrap!important;
+}
+.him-wrap .him-table th:nth-child(4),
+.him-wrap .him-table td:nth-child(4){
+  width:82px!important;
+  min-width:78px!important;
+  max-width:92px!important;
+  text-align:center!important;
+}
+.him-wrap .him-table th:nth-child(5),
+.him-wrap .him-table td:nth-child(5){
+  width:260px!important;
+  min-width:220px!important;
+  max-width:320px!important;
+}
+.him-wrap .him-inventory-cell{
+  min-width:220px!important;
+  max-width:320px!important;
+  width:260px!important;
+}
+.him-wrap .him-inventory-summary{line-height:1.45!important;}
+.him-wrap .him-mini-qr-card{min-width:66px!important;}
+.him-wrap .him-mini-qr-canvas{width:58px!important;}
+
+/* v2.7.2 Management table no horizontal gap/scroll */
+.him-wrap > form > .table-scroll{
+  overflow-x:visible!important;
+  width:100%!important;
+}
+.him-wrap > form > .table-scroll .him-table{
+  table-layout:fixed!important;
+  width:100%!important;
+  min-width:0!important;
+}
+.him-wrap > form > .table-scroll .him-table th,
+.him-wrap > form > .table-scroll .him-table td{
+  box-sizing:border-box!important;
+  padding:8px 6px!important;
+  white-space:normal!important;
+  overflow-wrap:anywhere!important;
+  word-break:normal!important;
+}
+.him-wrap > form > .table-scroll .him-table th:nth-child(1),
+.him-wrap > form > .table-scroll .him-table td:nth-child(1){width:34px!important;min-width:34px!important;max-width:34px!important;text-align:center!important;}
+.him-wrap > form > .table-scroll .him-table th:nth-child(2),
+.him-wrap > form > .table-scroll .him-table td:nth-child(2){width:92px!important;min-width:92px!important;max-width:92px!important;}
+.him-wrap > form > .table-scroll .him-table th:nth-child(3),
+.him-wrap > form > .table-scroll .him-table td:nth-child(3){width:96px!important;min-width:96px!important;max-width:96px!important;}
+.him-wrap > form > .table-scroll .him-table th:nth-child(4),
+.him-wrap > form > .table-scroll .him-table td:nth-child(4){width:92px!important;min-width:92px!important;max-width:92px!important;text-align:center!important;}
+.him-wrap > form > .table-scroll .him-table th:nth-child(5),
+.him-wrap > form > .table-scroll .him-table td:nth-child(5){width:300px!important;min-width:300px!important;max-width:300px!important;}
+.him-wrap > form > .table-scroll .him-table th:nth-child(6),
+.him-wrap > form > .table-scroll .him-table td:nth-child(6){width:105px!important;min-width:105px!important;max-width:105px!important;}
+.him-wrap > form > .table-scroll .him-table th:nth-child(7),
+.him-wrap > form > .table-scroll .him-table td:nth-child(7){width:96px!important;min-width:96px!important;max-width:96px!important;}
+.him-wrap > form > .table-scroll .him-table th:nth-child(8),
+.him-wrap > form > .table-scroll .him-table td:nth-child(8){width:86px!important;min-width:86px!important;max-width:86px!important;}
+.him-wrap > form > .table-scroll .him-table th:nth-child(9),
+.him-wrap > form > .table-scroll .him-table td:nth-child(9),
+.him-wrap > form > .table-scroll .him-table th:nth-child(10),
+.him-wrap > form > .table-scroll .him-table td:nth-child(10),
+.him-wrap > form > .table-scroll .him-table th:nth-child(11),
+.him-wrap > form > .table-scroll .him-table td:nth-child(11){width:78px!important;min-width:78px!important;max-width:78px!important;}
+.him-wrap > form > .table-scroll .him-table th:nth-child(12),
+.him-wrap > form > .table-scroll .him-table td:nth-child(12){width:145px!important;min-width:145px!important;max-width:145px!important;}
+.him-wrap > form > .table-scroll .him-inventory-cell{width:300px!important;min-width:300px!important;max-width:300px!important;}
+.him-wrap > form > .table-scroll .him-inventory-summary{line-height:1.35!important;font-size:13px!important;}
+.him-wrap > form > .table-scroll .him-mini-qr-card{min-width:0!important;width:72px!important;margin:0 auto!important;}
+.him-wrap > form > .table-scroll .him-mini-qr-canvas{width:54px!important;height:auto!important;}
+.him-wrap > form > .table-scroll .him-thumb img{width:44px!important;height:44px!important;}
+.him-wrap > form > .table-scroll td:last-child .button{margin:1px!important;padding:0 6px!important;min-height:26px!important;line-height:24px!important;font-size:12px!important;}
+@media(max-width:1400px){
+  .him-wrap > form > .table-scroll .him-table{font-size:12px!important;}
+  .him-wrap > form > .table-scroll .him-table th,
+  .him-wrap > form > .table-scroll .him-table td{padding:7px 4px!important;}
+  .him-wrap > form > .table-scroll .him-table th:nth-child(5),
+  .him-wrap > form > .table-scroll .him-table td:nth-child(5),
+  .him-wrap > form > .table-scroll .him-inventory-cell{width:250px!important;min-width:250px!important;max-width:250px!important;}
+}
+
+/* v2.7.4 Management columns exactly as requested: checkbox | serial no | tag number | QR | functional status | service hospital | picture | city | action */
+.him-wrap > form > .table-scroll{
+  overflow-x:visible!important;
+  width:100%!important;
+}
+.him-wrap > form > .table-scroll .him-management-compact-table{
+  width:100%!important;
+  min-width:0!important;
+  table-layout:fixed!important;
+  border-collapse:collapse!important;
+}
+.him-wrap > form > .table-scroll .him-management-compact-table th,
+.him-wrap > form > .table-scroll .him-management-compact-table td{
+  padding:8px 6px!important;
+  vertical-align:middle!important;
+  white-space:normal!important;
+  overflow-wrap:anywhere!important;
+  word-break:normal!important;
+  box-sizing:border-box!important;
+  font-size:13px!important;
+  line-height:1.35!important;
+}
+.him-wrap > form > .table-scroll .him-management-compact-table th:nth-child(1),
+.him-wrap > form > .table-scroll .him-management-compact-table td:nth-child(1){width:34px!important;text-align:center!important;}
+.him-wrap > form > .table-scroll .him-management-compact-table th:nth-child(2),
+.him-wrap > form > .table-scroll .him-management-compact-table td:nth-child(2){width:78px!important;}
+.him-wrap > form > .table-scroll .him-management-compact-table th:nth-child(3),
+.him-wrap > form > .table-scroll .him-management-compact-table td:nth-child(3){width:95px!important;}
+.him-wrap > form > .table-scroll .him-management-compact-table th:nth-child(4),
+.him-wrap > form > .table-scroll .him-management-compact-table td:nth-child(4){width:74px!important;text-align:center!important;padding-left:2px!important;padding-right:2px!important;}
+.him-wrap > form > .table-scroll .him-management-compact-table th:nth-child(5),
+.him-wrap > form > .table-scroll .him-management-compact-table td:nth-child(5){width:115px!important;}
+.him-wrap > form > .table-scroll .him-management-compact-table th:nth-child(6),
+.him-wrap > form > .table-scroll .him-management-compact-table td:nth-child(6){width:auto!important;}
+.him-wrap > form > .table-scroll .him-management-compact-table th:nth-child(7),
+.him-wrap > form > .table-scroll .him-management-compact-table td:nth-child(7){width:82px!important;text-align:center!important;}
+.him-wrap > form > .table-scroll .him-management-compact-table th:nth-child(8),
+.him-wrap > form > .table-scroll .him-management-compact-table td:nth-child(8){width:90px!important;}
+.him-wrap > form > .table-scroll .him-management-compact-table th:nth-child(9),
+.him-wrap > form > .table-scroll .him-management-compact-table td:nth-child(9){width:165px!important;}
+.him-wrap > form > .table-scroll .him-management-compact-table .him-mini-qr-card{width:58px!important;min-width:0!important;margin:0 auto!important;padding:0!important;}
+.him-wrap > form > .table-scroll .him-management-compact-table .him-mini-qr-canvas{width:50px!important;height:auto!important;display:block!important;margin:0 auto!important;}
+.him-wrap > form > .table-scroll .him-management-compact-table .him-thumb img{width:42px!important;height:42px!important;object-fit:cover!important;}
+.him-wrap > form > .table-scroll .him-management-compact-table td:last-child .button{margin:1px!important;padding:0 6px!important;min-height:26px!important;line-height:24px!important;font-size:12px!important;}
+@media(max-width:1250px){
+  .him-wrap > form > .table-scroll{overflow-x:auto!important;}
+  .him-wrap > form > .table-scroll .him-management-compact-table{min-width:900px!important;}
+}
+
+/* v2.7.5 Management: show Inventory detail right after QR code */
+.him-wrap > form > .table-scroll{
+  overflow-x:visible!important;
+  width:100%!important;
+}
+.him-wrap > form > .table-scroll .him-management-compact-table{
+  width:100%!important;
+  min-width:0!important;
+  table-layout:fixed!important;
+}
+.him-wrap > form > .table-scroll .him-management-compact-table th,
+.him-wrap > form > .table-scroll .him-management-compact-table td{
+  padding:8px 5px!important;
+  font-size:13px!important;
+  line-height:1.35!important;
+  vertical-align:middle!important;
+  white-space:normal!important;
+  overflow-wrap:anywhere!important;
+  box-sizing:border-box!important;
+}
+.him-wrap > form > .table-scroll .him-management-compact-table th:nth-child(1),
+.him-wrap > form > .table-scroll .him-management-compact-table td:nth-child(1){width:32px!important;text-align:center!important;}
+.him-wrap > form > .table-scroll .him-management-compact-table th:nth-child(2),
+.him-wrap > form > .table-scroll .him-management-compact-table td:nth-child(2){width:74px!important;}
+.him-wrap > form > .table-scroll .him-management-compact-table th:nth-child(3),
+.him-wrap > form > .table-scroll .him-management-compact-table td:nth-child(3){width:82px!important;}
+.him-wrap > form > .table-scroll .him-management-compact-table th:nth-child(4),
+.him-wrap > form > .table-scroll .him-management-compact-table td:nth-child(4){width:70px!important;text-align:center!important;padding-left:2px!important;padding-right:2px!important;}
+.him-wrap > form > .table-scroll .him-management-compact-table th:nth-child(5),
+.him-wrap > form > .table-scroll .him-management-compact-table td:nth-child(5){width:300px!important;}
+.him-wrap > form > .table-scroll .him-management-compact-table th:nth-child(6),
+.him-wrap > form > .table-scroll .him-management-compact-table td:nth-child(6){width:105px!important;}
+.him-wrap > form > .table-scroll .him-management-compact-table th:nth-child(7),
+.him-wrap > form > .table-scroll .him-management-compact-table td:nth-child(7){width:auto!important;}
+.him-wrap > form > .table-scroll .him-management-compact-table th:nth-child(8),
+.him-wrap > form > .table-scroll .him-management-compact-table td:nth-child(8){width:72px!important;text-align:center!important;}
+.him-wrap > form > .table-scroll .him-management-compact-table th:nth-child(9),
+.him-wrap > form > .table-scroll .him-management-compact-table td:nth-child(9){width:75px!important;}
+.him-wrap > form > .table-scroll .him-management-compact-table th:nth-child(10),
+.him-wrap > form > .table-scroll .him-management-compact-table td:nth-child(10){width:138px!important;}
+.him-wrap > form > .table-scroll .him-management-compact-table .him-inventory-cell{min-width:0!important;max-width:none!important;width:300px!important;}
+.him-wrap > form > .table-scroll .him-management-compact-table .him-inventory-summary{min-width:0!important;line-height:1.45!important;font-size:13px!important;}
+.him-wrap > form > .table-scroll .him-management-compact-table .him-inventory-summary .him-inventory-name{font-size:14px!important;margin-bottom:6px!important;}
+.him-wrap > form > .table-scroll .him-management-compact-table .him-mini-qr-card{width:56px!important;min-width:0!important;margin:0 auto!important;padding:0!important;}
+.him-wrap > form > .table-scroll .him-management-compact-table .him-mini-qr-canvas{width:48px!important;height:auto!important;display:block!important;margin:0 auto!important;}
+.him-wrap > form > .table-scroll .him-management-compact-table .him-thumb img{width:42px!important;height:42px!important;object-fit:cover!important;}
+.him-wrap > form > .table-scroll .him-management-compact-table td:last-child .button{margin:1px!important;padding:0 5px!important;min-height:26px!important;line-height:24px!important;font-size:12px!important;}
+@media(max-width:1250px){
+  .him-wrap > form > .table-scroll{overflow-x:auto!important;}
+  .him-wrap > form > .table-scroll .him-management-compact-table{min-width:980px!important;}
+}
+
+
+/* v2.7.6 Management spacing final fix: compact Tag Number -> QR Code gap */
+table.him-management-compact-table{
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  table-layout:fixed!important;
+  border-collapse:collapse!important;
+}
+table.him-management-compact-table .him-col-check{width:3%!important;}
+table.him-management-compact-table .him-col-serial{width:6%!important;}
+table.him-management-compact-table .him-col-tag{width:7%!important;}
+table.him-management-compact-table .him-col-qr{width:8%!important;}
+table.him-management-compact-table .him-col-inventory{width:27%!important;}
+table.him-management-compact-table .him-col-status{width:10%!important;}
+table.him-management-compact-table .him-col-hospital{width:13%!important;}
+table.him-management-compact-table .him-col-picture{width:7%!important;}
+table.him-management-compact-table .him-col-city{width:7%!important;}
+table.him-management-compact-table .him-col-action{width:12%!important;}
+.him-wrap .table-scroll table.him-management-compact-table th,
+.him-wrap .table-scroll table.him-management-compact-table td{
+  padding:7px 4px!important;
+  white-space:normal!important;
+  overflow-wrap:anywhere!important;
+  word-break:normal!important;
+  vertical-align:middle!important;
+}
+.him-wrap .table-scroll table.him-management-compact-table th:nth-child(1),
+.him-wrap .table-scroll table.him-management-compact-table td:nth-child(1){text-align:center!important;padding-left:2px!important;padding-right:2px!important;}
+.him-wrap .table-scroll table.him-management-compact-table th:nth-child(2),
+.him-wrap .table-scroll table.him-management-compact-table td:nth-child(2),
+.him-wrap .table-scroll table.him-management-compact-table th:nth-child(3),
+.him-wrap .table-scroll table.him-management-compact-table td:nth-child(3),
+.him-wrap .table-scroll table.him-management-compact-table th:nth-child(4),
+.him-wrap .table-scroll table.him-management-compact-table td:nth-child(4){
+  text-align:left!important;
+  padding-left:3px!important;
+  padding-right:3px!important;
+}
+.him-wrap .table-scroll table.him-management-compact-table th:nth-child(4),
+.him-wrap .table-scroll table.him-management-compact-table td:nth-child(4){text-align:center!important;}
+.him-wrap .table-scroll table.him-management-compact-table .him-mini-qr-card{
+  width:54px!important;
+  margin:0!important;
+  padding:0!important;
+  display:inline-block!important;
+}
+.him-wrap .table-scroll table.him-management-compact-table .him-mini-qr-canvas{
+  width:48px!important;
+  height:auto!important;
+  display:block!important;
+  margin:0!important;
+}
+.him-wrap .table-scroll table.him-management-compact-table .him-inventory-cell{width:auto!important;max-width:none!important;}
+.him-wrap .table-scroll table.him-management-compact-table .him-inventory-summary{font-size:13px!important;line-height:1.42!important;}
+.him-wrap .table-scroll table.him-management-compact-table .him-inventory-summary .him-inventory-name{font-size:14px!important;margin-bottom:5px!important;}
+@media(max-width:1250px){
+  .him-wrap > form > .table-scroll{overflow-x:auto!important;}
+  .him-wrap > form > .table-scroll table.him-management-compact-table{min-width:900px!important;}
+}
+
+
+/* v2.7.9 Management QR canvas: show QR ID/serial and inventory name below QR inside the image */
+.him-wrap .table-scroll table.him-management-compact-table th:nth-child(4),
+.him-wrap .table-scroll table.him-management-compact-table td:nth-child(4){width:96px!important;min-width:96px!important;max-width:96px!important;text-align:center!important;}
+.him-wrap .table-scroll table.him-management-compact-table .him-mini-qr-card{width:86px!important;min-width:86px!important;margin:0 auto!important;padding:0!important;display:block!important;}
+.him-wrap .table-scroll table.him-management-compact-table .him-mini-qr-canvas{width:82px!important;height:auto!important;display:block!important;margin:0 auto!important;border:1px solid #eee!important;background:#fff!important;}
+@media(max-width:1250px){.him-wrap > form > .table-scroll table.him-management-compact-table{min-width:940px!important;}}
+
+
+/* v2.7.10 Management QR: larger QR canvas with visible ID and inventory name */
+.him-wrap .table-scroll table.him-management-compact-table th:nth-child(4),
+.him-wrap .table-scroll table.him-management-compact-table td:nth-child(4){width:130px!important;min-width:130px!important;max-width:130px!important;text-align:center!important;}
+.him-wrap .table-scroll table.him-management-compact-table .him-mini-qr-card{width:122px!important;min-width:122px!important;margin:0 auto!important;padding:0!important;display:block!important;text-align:center!important;}
+.him-wrap .table-scroll table.him-management-compact-table .him-mini-qr-canvas{width:118px!important;height:auto!important;display:block!important;margin:0 auto 4px!important;border:1px solid #eee!important;background:#fff!important;border-radius:4px!important;}
+.him-mini-qr-meta{font-size:10px!important;line-height:1.15!important;color:#111827!important;text-align:center!important;word-break:break-word!important;}
+.him-mini-qr-id{font-weight:700!important;}
+.him-mini-qr-name{font-weight:600!important;}
+@media(max-width:1250px){.him-wrap > form > .table-scroll table.him-management-compact-table{min-width:1020px!important;}}
+
+/* v2.7.12 Management QR overlap fix: text stays inside canvas only */
+.him-wrap .table-scroll table.him-management-compact-table .him-col-qr{width:9%!important;}
+.him-wrap .table-scroll table.him-management-compact-table .him-col-inventory{width:26%!important;}
+.him-wrap .table-scroll table.him-management-compact-table th:nth-child(4),
+.him-wrap .table-scroll table.him-management-compact-table td:nth-child(4){
+  width:112px!important;
+  min-width:112px!important;
+  max-width:112px!important;
+  text-align:center!important;
+  overflow:hidden!important;
+  padding-left:4px!important;
+  padding-right:4px!important;
+}
+.him-wrap .table-scroll table.him-management-compact-table th:nth-child(5),
+.him-wrap .table-scroll table.him-management-compact-table td:nth-child(5){
+  padding-left:10px!important;
+  overflow:visible!important;
+}
+.him-wrap .table-scroll table.him-management-compact-table .him-mini-qr-card{
+  width:102px!important;
+  min-width:102px!important;
+  max-width:102px!important;
+  margin:0 auto!important;
+  padding:0!important;
+  display:block!important;
+  text-align:center!important;
+  overflow:hidden!important;
+}
+.him-wrap .table-scroll table.him-management-compact-table .him-mini-qr-canvas{
+  width:100px!important;
+  max-width:100%!important;
+  height:auto!important;
+  display:block!important;
+  margin:0 auto!important;
+  border:1px solid #eee!important;
+  background:#fff!important;
+  border-radius:4px!important;
+  box-sizing:border-box!important;
+}
+.him-wrap .table-scroll table.him-management-compact-table .him-mini-qr-meta,
+.him-wrap .table-scroll table.him-management-compact-table .him-mini-qr-id,
+.him-wrap .table-scroll table.him-management-compact-table .him-mini-qr-name{
+  display:none!important;
+}
+@media(max-width:1250px){
+  .him-wrap > form > .table-scroll table.him-management-compact-table{min-width:1040px!important;}
+}
+
+/* v2.8.0 Serial/Tag validation, status colors, management table and image lightbox */
+.him-user-serial-wrap .him-serial-check-message{display:block;margin-top:5px;font-size:12px;font-weight:600;min-height:16px}
+.him-user-serial-wrap .him-serial-check-message.is-error{color:#dc2626}
+.him-user-serial-wrap .him-serial-check-message.is-ok{color:#16a34a}
+.him-status-badge{display:inline-flex;align-items:center;justify-content:center;padding:4px 9px;border-radius:999px;font-size:12px;font-weight:700;line-height:1.2;white-space:nowrap}
+.him-status-functional{background:#dcfce7;color:#166534;border:1px solid #86efac}
+.him-status-non-functional{background:#fee2e2;color:#991b1b;border:1px solid #fecaca}
+.him-lightbox-img{cursor:zoom-in}
+.him-lightbox-overlay{display:none;position:fixed;z-index:999999;inset:0;background:rgba(0,0,0,.84);align-items:center;justify-content:center;padding:32px}
+.him-lightbox-overlay.is-open{display:flex}
+.him-lightbox-full{max-width:92vw;max-height:88vh;object-fit:contain;background:#fff;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+.him-lightbox-close{position:fixed;top:18px;right:22px;width:42px;height:42px;border:0;border-radius:50%;background:#fff;color:#111;font-size:32px;line-height:38px;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+table.him-management-compact-table .him-col-check{width:4%!important}
+table.him-management-compact-table .him-col-sr{width:6%!important}
+table.him-management-compact-table .him-col-tag{width:10%!important}
+table.him-management-compact-table .him-col-inventory{width:24%!important}
+table.him-management-compact-table .him-col-status{width:13%!important}
+table.him-management-compact-table .him-col-picture{width:12%!important}
+table.him-management-compact-table .him-col-city{width:11%!important}
+table.him-management-compact-table .him-col-district{width:11%!important}
+table.him-management-compact-table .him-col-action{width:13%!important}
+.him-wrap .table-scroll table.him-management-compact-table th:nth-child(4),
+.him-wrap .table-scroll table.him-management-compact-table td:nth-child(4){width:auto!important;min-width:160px!important;max-width:none!important;text-align:left!important;overflow:visible!important;padding-left:8px!important;padding-right:8px!important}
+.him-wrap .table-scroll table.him-management-compact-table th:nth-child(5),
+.him-wrap .table-scroll table.him-management-compact-table td:nth-child(5){padding-left:6px!important;text-align:center!important}
+@media(max-width:1250px){.him-wrap > form > .table-scroll table.him-management-compact-table{min-width:920px!important}}
+
+/* v2.8.5 Edit page back button and nicer management action buttons */
+.him-edit-top-actions{margin:8px 0 16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.him-back-management-btn{display:inline-flex!important;align-items:center!important;gap:6px!important;border:1px solid #cbd5e1!important;background:#ffffff!important;color:#0f172a!important;border-radius:8px!important;padding:6px 13px!important;font-weight:700!important;box-shadow:0 2px 6px rgba(15,23,42,.08)!important;text-decoration:none!important;transition:all .18s ease!important}
+.him-back-management-btn:hover{background:#f8fafc!important;border-color:#94a3b8!important;color:#0f172a!important;transform:translateY(-1px);box-shadow:0 5px 14px rgba(15,23,42,.12)!important}
+.him-action-buttons{white-space:nowrap!important;vertical-align:middle!important}
+.him-action-buttons .him-action-btn{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:30px!important;padding:4px 10px!important;margin:2px!important;border-radius:8px!important;font-size:12px!important;font-weight:700!important;line-height:1.2!important;text-decoration:none!important;border:1px solid transparent!important;box-shadow:0 2px 6px rgba(15,23,42,.10)!important;transition:all .18s ease!important}
+.him-action-buttons .him-action-btn:hover{transform:translateY(-1px);box-shadow:0 6px 14px rgba(15,23,42,.14)!important}
+.him-action-buttons .him-action-view{background:#eff6ff!important;border-color:#bfdbfe!important;color:#1d4ed8!important}
+.him-action-buttons .him-action-view:hover{background:#dbeafe!important;color:#1e40af!important}
+.him-action-buttons .him-action-edit{background:#ecfdf5!important;border-color:#bbf7d0!important;color:#047857!important}
+.him-action-buttons .him-action-edit:hover{background:#d1fae5!important;color:#065f46!important}
+.him-action-buttons .him-action-delete{background:#fff1f2!important;border-color:#fecdd3!important;color:#be123c!important}
+.him-action-buttons .him-action-delete:hover{background:#ffe4e6!important;color:#9f1239!important}
+@media(max-width:782px){.him-action-buttons .him-action-btn{min-height:34px!important;padding:6px 11px!important}}
+
+/* v2.8.7 Management UI polish: action buttons in one row + cleaner frontend single-border table */
+.him-wrap .him-management-actions{
+  display:flex!important;
+  justify-content:space-between!important;
+  align-items:center!important;
+  gap:12px!important;
+  margin:14px 0 20px!important;
+}
+.him-wrap .him-management-actions .him-delete-selected-top{
+  margin-right:auto!important;
+}
+.him-wrap .him-management-actions .him-export-selected{
+  margin-left:auto!important;
+}
+
+.him-wrap > form > .table-scroll table.him-management-compact-table th:last-child,
+.him-wrap > form > .table-scroll table.him-management-compact-table td:last-child,
+.him-wrap > form > .table-scroll table.him-management-compact-table th.him-col-action,
+.him-wrap > form > .table-scroll table.him-management-compact-table td.him-action-buttons{
+  width:205px!important;
+  min-width:205px!important;
+  max-width:205px!important;
+}
+.him-action-buttons{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  flex-wrap:nowrap!important;
+  gap:7px!important;
+  white-space:nowrap!important;
+}
+.him-action-buttons .him-action-btn{
+  margin:0!important;
+  flex:0 0 auto!important;
+  min-width:52px!important;
+}
+.him-action-buttons .him-action-delete{
+  min-width:62px!important;
+}
+@media(max-width:1250px){
+  .him-wrap > form > .table-scroll table.him-management-compact-table{
+    min-width:1120px!important;
+  }
+}
+
+.him-front-content .table-scroll{
+  border:0!important;
+  padding:0!important;
+  background:transparent!important;
+  border-radius:14px!important;
+}
+.him-front-content table.him-management-compact-table{
+  border:1px solid #e5e7eb!important;
+  border-radius:14px!important;
+  border-collapse:separate!important;
+  border-spacing:0!important;
+  overflow:hidden!important;
+  background:#fff!important;
+  box-shadow:0 8px 22px rgba(15,23,42,.06)!important;
+}
+.him-front-content table.him-management-compact-table th,
+.him-front-content table.him-management-compact-table td{
+  border-left:0!important;
+  border-right:0!important;
+  border-top:0!important;
+  border-bottom:1px solid #eef2f7!important;
+}
+.him-front-content table.him-management-compact-table tbody tr:last-child td{
+  border-bottom:0!important;
+}
+.him-front-content table.him-management-compact-table thead th{
+  background:#f8fafc!important;
+  color:#111827!important;
+  font-weight:800!important;
+}
+.him-front-content table.him-management-compact-table tbody tr{
+  background:#fff!important;
+}
+.him-front-content table.him-management-compact-table tbody tr:nth-child(even){
+  background:#fbfdff!important;
+}
+.him-front-content table.him-management-compact-table tbody tr:hover{
+  background:#f0f9ff!important;
+}
+.him-front-content table.him-management-compact-table .him-inventory-summary{
+  line-height:1.55!important;
+  color:#334155!important;
+}
+.him-front-content table.him-management-compact-table .him-inventory-name{
+  color:#0f172a!important;
+  font-size:15px!important;
+  margin-bottom:6px!important;
+}
+.him-front-content .him-action-buttons{
+  min-width:205px!important;
+}
+.him-front-content .him-action-buttons .him-action-btn{
+  border-radius:9px!important;
+  min-height:34px!important;
+}
+
+/* v2.8.8 Frontend management table: remove double borders/grid lines */
+.him-front-content .table-scroll{
+  border:0!important;
+  box-shadow:none!important;
+  padding:0!important;
+  background:transparent!important;
+  overflow-x:auto!important;
+}
+.him-front-content table.widefat.him-management-compact-table,
+.him-front-content table.him-table.him-management-compact-table,
+.him-front-content table.him-management-compact-table{
+  width:100%!important;
+  border:1px solid #e5e7eb!important;
+  outline:0!important;
+  border-collapse:separate!important;
+  border-spacing:0!important;
+  border-radius:14px!important;
+  overflow:hidden!important;
+  background:#ffffff!important;
+  box-shadow:0 8px 22px rgba(15,23,42,.06)!important;
+}
+.him-front-content table.him-management-compact-table thead,
+.him-front-content table.him-management-compact-table tbody,
+.him-front-content table.him-management-compact-table tr,
+.him-front-content table.him-management-compact-table th,
+.him-front-content table.him-management-compact-table td{
+  border-left:0!important;
+  border-right:0!important;
+  border-top:0!important;
+  box-shadow:none!important;
+  outline:0!important;
+}
+.him-front-content table.him-management-compact-table th,
+.him-front-content table.him-management-compact-table td{
+  border-bottom:1px solid #eef2f7!important;
+}
+.him-front-content table.him-management-compact-table tbody tr:last-child td{
+  border-bottom:0!important;
+}
+.him-front-content table.him-management-compact-table thead th{
+  background:#f8fafc!important;
+  color:#334155!important;
+  font-weight:700!important;
+}
+.him-front-content table.him-management-compact-table tbody tr{
+  background:#ffffff!important;
+}
+.him-front-content table.him-management-compact-table tbody tr:nth-child(even){
+  background:#fbfdff!important;
+}
+.him-front-content table.him-management-compact-table tbody tr:hover{
+  background:#f0f9ff!important;
+}
+.him-front-content table.him-management-compact-table th:first-child{
+  border-top-left-radius:14px!important;
+}
+.him-front-content table.him-management-compact-table th:last-child{
+  border-top-right-radius:14px!important;
+}
+.him-front-content table.him-management-compact-table tbody tr:last-child td:first-child{
+  border-bottom-left-radius:14px!important;
+}
+.him-front-content table.him-management-compact-table tbody tr:last-child td:last-child{
+  border-bottom-right-radius:14px!important;
+}
+
+/* v2.8.9 Backend/Admin action buttons: keep View Edit Delete in one horizontal row */
+.him-wrap table.him-management-compact-table th.him-col-action,
+.him-wrap table.him-management-compact-table td.him-action-buttons{
+  width:240px!important;
+  min-width:240px!important;
+  max-width:240px!important;
+  white-space:nowrap!important;
+  vertical-align:middle!important;
+}
+.him-wrap table.him-management-compact-table td.him-action-buttons{
+  display:table-cell!important;
+}
+.him-wrap table.him-management-compact-table td.him-action-buttons .him-action-button-row{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  flex-wrap:nowrap!important;
+  gap:8px!important;
+  white-space:nowrap!important;
+  min-width:220px!important;
+}
+.him-wrap table.him-management-compact-table td.him-action-buttons .him-action-btn{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex:0 0 auto!important;
+  margin:0!important;
+  min-width:auto!important;
+  height:34px!important;
+  line-height:1!important;
+  padding:6px 12px!important;
+}
+.him-wrap table.him-management-compact-table td.him-action-buttons .him-action-delete{
+  min-width:auto!important;
+}
+.him-wrap > form > .table-scroll table.him-management-compact-table{
+  min-width:1180px!important;
+}
+
+/* v2.8.10 Management table width balance: give Action column more space */
+.him-wrap > form > .table-scroll table.him-management-compact-table{
+  table-layout:fixed!important;
+  min-width:1120px!important;
+  width:100%!important;
+}
+.him-wrap > form > .table-scroll table.him-management-compact-table col.him-col-check{width:4%!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table col.him-col-srno{width:5%!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table col.him-col-tag{width:8%!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table col.him-col-inventory{width:27%!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table col.him-col-status{width:10%!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table col.him-col-pictures{width:9%!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table col.him-col-city{width:8%!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table col.him-col-district{width:8%!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table col.him-col-action{width:21%!important;}
+
+.him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(1),
+.him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(1){width:4%!important;min-width:38px!important;max-width:none!important;text-align:center!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(2),
+.him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(2){width:5%!important;min-width:48px!important;max-width:none!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(3),
+.him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(3){width:8%!important;min-width:70px!important;max-width:none!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(4),
+.him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(4){width:27%!important;min-width:240px!important;max-width:none!important;text-align:left!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(5),
+.him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(5){width:10%!important;min-width:108px!important;max-width:none!important;text-align:center!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(6),
+.him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(6){width:9%!important;min-width:90px!important;max-width:none!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(7),
+.him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(7){width:8%!important;min-width:82px!important;max-width:none!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(8),
+.him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(8){width:8%!important;min-width:82px!important;max-width:none!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(9),
+.him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(9),
+.him-wrap table.him-management-compact-table th.him-col-action,
+.him-wrap table.him-management-compact-table td.him-action-buttons{
+  width:21%!important;
+  min-width:235px!important;
+  max-width:none!important;
+  white-space:nowrap!important;
+}
+.him-wrap table.him-management-compact-table td.him-action-buttons .him-action-button-row{
+  width:100%!important;
+  min-width:0!important;
+  display:flex!important;
+  flex-wrap:nowrap!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:6px!important;
+}
+.him-wrap table.him-management-compact-table td.him-action-buttons .him-action-btn{
+  height:32px!important;
+  padding:5px 10px!important;
+  font-size:12px!important;
+  flex:0 0 auto!important;
+}
+@media(max-width:1250px){
+  .him-wrap > form > .table-scroll table.him-management-compact-table{min-width:1120px!important;}
+}
+
+
+/* v2.8.11 Requested fixes: focal fields manual one-per-row + image field last in Basic section */
+.him-focal-grid{
+  grid-template-columns:1fr!important;
+}
+.him-focal-grid label{
+  grid-column:1/-1!important;
+}
+.him-image-field{
+  grid-column:1/-1!important;
+}
+.him-detail-top-actions{
+  margin:0 0 14px!important;
+}
+.him-detail-page-images .him-lightbox-img,
+.him-image-preview .him-lightbox-img{
+  cursor:zoom-in!important;
+}
+
+/* v2.8.12 Management table spacing fix: keep all columns inside screen */
+.him-wrap > form > .table-scroll{
+  width:100%!important;
+  max-width:100%!important;
+  overflow-x:visible!important;
+}
+.him-wrap > form > .table-scroll table.him-management-compact-table{
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  table-layout:fixed!important;
+  border-collapse:collapse!important;
+}
+.him-wrap > form > .table-scroll table.him-management-compact-table col.him-col-check{width:3%!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table col.him-col-srno{width:4%!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table col.him-col-tag{width:6%!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table col.him-col-inventory{width:32%!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table col.him-col-status{width:11%!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table col.him-col-pictures{width:8%!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table col.him-col-city{width:7%!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table col.him-col-district{width:7%!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table col.him-col-action{width:22%!important;}
+
+.him-wrap > form > .table-scroll table.him-management-compact-table th,
+.him-wrap > form > .table-scroll table.him-management-compact-table td{
+  padding:9px 6px!important;
+  box-sizing:border-box!important;
+  white-space:normal!important;
+  overflow-wrap:anywhere!important;
+  word-break:normal!important;
+  vertical-align:middle!important;
+  font-size:13px!important;
+  line-height:1.35!important;
+}
+.him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(1),
+.him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(1){width:3%!important;min-width:0!important;max-width:none!important;text-align:center!important;padding-left:2px!important;padding-right:2px!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(2),
+.him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(2){width:4%!important;min-width:0!important;max-width:none!important;text-align:center!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(3),
+.him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(3){width:6%!important;min-width:0!important;max-width:none!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(4),
+.him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(4){width:32%!important;min-width:0!important;max-width:none!important;text-align:left!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(5),
+.him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(5){width:11%!important;min-width:0!important;max-width:none!important;text-align:center!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(6),
+.him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(6){width:8%!important;min-width:0!important;max-width:none!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(7),
+.him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(7){width:7%!important;min-width:0!important;max-width:none!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(8),
+.him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(8){width:7%!important;min-width:0!important;max-width:none!important;}
+.him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(9),
+.him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(9),
+.him-wrap table.him-management-compact-table th.him-col-action,
+.him-wrap table.him-management-compact-table td.him-action-buttons{
+  width:22%!important;
+  min-width:0!important;
+  max-width:none!important;
+  white-space:nowrap!important;
+}
+.him-wrap table.him-management-compact-table td.him-action-buttons .him-action-button-row{
+  display:flex!important;
+  flex-wrap:nowrap!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:6px!important;
+  width:100%!important;
+  min-width:0!important;
+}
+.him-wrap table.him-management-compact-table td.him-action-buttons .him-action-btn{
+  display:inline-flex!important;
+  flex:0 0 auto!important;
+  align-items:center!important;
+  justify-content:center!important;
+  height:32px!important;
+  min-height:32px!important;
+  padding:5px 10px!important;
+  margin:0!important;
+  font-size:12px!important;
+  line-height:1!important;
+}
+.him-wrap > form > .table-scroll table.him-management-compact-table .him-inventory-cell,
+.him-wrap > form > .table-scroll table.him-management-compact-table .him-inventory-summary{
+  width:auto!important;
+  min-width:0!important;
+  max-width:none!important;
+}
+.him-wrap > form > .table-scroll table.him-management-compact-table .him-inventory-summary{
+  font-size:13px!important;
+  line-height:1.42!important;
+}
+.him-wrap > form > .table-scroll table.him-management-compact-table .him-inventory-summary .him-inventory-name{
+  font-size:14px!important;
+  margin-bottom:5px!important;
+}
+@media(max-width:1100px){
+  .him-wrap > form > .table-scroll{overflow-x:auto!important;}
+  .him-wrap > form > .table-scroll table.him-management-compact-table{min-width:980px!important;}
+}
+
+/* v2.8.13 Management table spacing fix: no page horizontal scroll */
+.him-wrap > form > .table-scroll{
+  width:100%!important;
+  max-width:100%!important;
+  overflow-x:hidden!important;
+  box-sizing:border-box!important;
+}
+.him-wrap > form > .table-scroll table.him-management-compact-table{
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  table-layout:fixed!important;
+  border-collapse:collapse!important;
+}
+.him-wrap > form > .table-scroll table.him-management-compact-table th,
+.him-wrap > form > .table-scroll table.him-management-compact-table td{
+  padding:7px 5px!important;
+  box-sizing:border-box!important;
+  white-space:normal!important;
+  overflow-wrap:anywhere!important;
+  word-break:normal!important;
+  vertical-align:middle!important;
+}
+/* actual management columns: checkbox | Sr No | Tag | Inventory | Functional Status | Pictures | City | District | Action */
+.him-wrap table.him-management-compact-table .him-col-check,
+.him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(1),
+.him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(1){width:3%!important;min-width:0!important;max-width:none!important;text-align:center!important;}
+.him-wrap table.him-management-compact-table .him-col-sr,
+.him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(2),
+.him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(2){width:5%!important;min-width:0!important;max-width:none!important;text-align:center!important;}
+.him-wrap table.him-management-compact-table .him-col-tag,
+.him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(3),
+.him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(3){width:7%!important;min-width:0!important;max-width:none!important;}
+.him-wrap table.him-management-compact-table .him-col-inventory,
+.him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(4),
+.him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(4){width:36%!important;min-width:0!important;max-width:none!important;text-align:left!important;overflow:hidden!important;}
+.him-wrap table.him-management-compact-table .him-col-status,
+.him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(5),
+.him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(5){width:10%!important;min-width:0!important;max-width:none!important;text-align:center!important;}
+.him-wrap table.him-management-compact-table .him-col-picture,
+.him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(6),
+.him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(6){width:8%!important;min-width:0!important;max-width:none!important;}
+.him-wrap table.him-management-compact-table .him-col-city,
+.him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(7),
+.him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(7){width:7%!important;min-width:0!important;max-width:none!important;}
+.him-wrap table.him-management-compact-table .him-col-district,
+.him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(8),
+.him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(8){width:7%!important;min-width:0!important;max-width:none!important;}
+.him-wrap table.him-management-compact-table .him-col-action,
+.him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(9),
+.him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(9){width:17%!important;min-width:0!important;max-width:none!important;}
+.him-wrap > form > .table-scroll .him-inventory-cell,
+.him-wrap > form > .table-scroll .him-inventory-summary{
+  width:auto!important;
+  min-width:0!important;
+  max-width:none!important;
+}
+.him-wrap > form > .table-scroll .him-inventory-summary{
+  font-size:13px!important;
+  line-height:1.42!important;
+}
+.him-wrap > form > .table-scroll .him-action-button-row{
+  display:flex!important;
+  flex-wrap:nowrap!important;
+  align-items:center!important;
+  gap:5px!important;
+  justify-content:flex-start!important;
+}
+.him-wrap > form > .table-scroll td.him-action-buttons .button,
+.him-wrap > form > .table-scroll .him-action-button-row .button{
+  margin:0!important;
+  padding:2px 8px!important;
+  min-height:30px!important;
+  line-height:24px!important;
+  font-size:12px!important;
+  white-space:nowrap!important;
+}
+@media(max-width:1050px){
+  .him-wrap > form > .table-scroll{overflow-x:auto!important;}
+  .him-wrap > form > .table-scroll table.him-management-compact-table{min-width:850px!important;}
+}
+
+
+/* v2.8.14 Final management table compact: remove bottom horizontal page scroll */
+html.wp-toolbar,
+body.wp-admin{
+  overflow-x:hidden!important;
+}
+body.wp-admin #wpcontent,
+body.wp-admin #wpbody,
+body.wp-admin #wpbody-content,
+body.wp-admin .him-wrap{
+  max-width:100%!important;
+  overflow-x:hidden!important;
+  box-sizing:border-box!important;
+}
+body.wp-admin .him-wrap > form,
+body.wp-admin .him-wrap > form > .table-scroll{
+  width:100%!important;
+  max-width:100%!important;
+  overflow-x:hidden!important;
+  box-sizing:border-box!important;
+}
+body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table{
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  table-layout:fixed!important;
+}
+body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table col.him-col-check{width:3%!important;}
+body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table col.him-col-srno{width:5%!important;}
+body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table col.him-col-tag{width:7%!important;}
+body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table col.him-col-inventory{width:35%!important;}
+body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table col.him-col-status{width:10%!important;}
+body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table col.him-col-pictures{width:8%!important;}
+body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table col.him-col-city{width:7%!important;}
+body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table col.him-col-district{width:7%!important;}
+body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table col.him-col-action{width:18%!important;}
+body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table th,
+body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table td{
+  padding:7px 4px!important;
+  min-width:0!important;
+  max-width:none!important;
+  box-sizing:border-box!important;
+  white-space:normal!important;
+  overflow-wrap:anywhere!important;
+  word-break:normal!important;
+  font-size:13px!important;
+  line-height:1.32!important;
+}
+body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(1),
+body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(1){width:3%!important;text-align:center!important;padding-left:1px!important;padding-right:1px!important;}
+body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(2),
+body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(2){width:5%!important;text-align:center!important;}
+body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(3),
+body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(3){width:7%!important;}
+body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(4),
+body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(4){width:35%!important;text-align:left!important;overflow:hidden!important;}
+body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(5),
+body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(5){width:10%!important;text-align:center!important;}
+body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(6),
+body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(6){width:8%!important;text-align:left!important;}
+body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(7),
+body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(7){width:7%!important;}
+body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(8),
+body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(8){width:7%!important;}
+body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table th:nth-child(9),
+body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table td:nth-child(9),
+body.wp-admin .him-wrap table.him-management-compact-table th.him-col-action,
+body.wp-admin .him-wrap table.him-management-compact-table td.him-action-buttons{
+  width:18%!important;
+  min-width:0!important;
+  max-width:none!important;
+  white-space:nowrap!important;
+  overflow:hidden!important;
+}
+body.wp-admin .him-wrap > form > .table-scroll .him-inventory-cell,
+body.wp-admin .him-wrap > form > .table-scroll .him-inventory-summary{
+  width:auto!important;
+  min-width:0!important;
+  max-width:none!important;
+}
+body.wp-admin .him-wrap > form > .table-scroll .him-inventory-summary{font-size:13px!important;line-height:1.35!important;}
+body.wp-admin .him-wrap > form > .table-scroll .him-inventory-summary .him-inventory-name{font-size:14px!important;margin-bottom:4px!important;}
+body.wp-admin .him-wrap table.him-management-compact-table td.him-action-buttons .him-action-button-row,
+body.wp-admin .him-wrap > form > .table-scroll .him-action-button-row{
+  display:flex!important;
+  flex-wrap:nowrap!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:4px!important;
+  width:100%!important;
+  min-width:0!important;
+  max-width:100%!important;
+}
+body.wp-admin .him-wrap table.him-management-compact-table td.him-action-buttons .him-action-btn,
+body.wp-admin .him-wrap > form > .table-scroll .him-action-button-row .him-action-btn{
+  display:inline-flex!important;
+  flex:0 0 auto!important;
+  margin:0!important;
+  padding:4px 7px!important;
+  min-width:0!important;
+  min-height:29px!important;
+  height:29px!important;
+  line-height:1!important;
+  font-size:12px!important;
+  white-space:nowrap!important;
+}
+@media(max-width:1100px){
+  body.wp-admin .him-wrap > form > .table-scroll{overflow-x:auto!important;}
+  body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table{min-width:760px!important;}
+}
+
+/* v2.8.15 Admin + Frontend Management table: normal columns, no bottom horizontal scroll */
+html, body,
+html.wp-toolbar, body.wp-admin{
+  overflow-x:hidden!important;
+  max-width:100%!important;
+}
+body.wp-admin #wpwrap,
+body.wp-admin #wpcontent,
+body.wp-admin #wpbody,
+body.wp-admin #wpbody-content{
+  max-width:100%!important;
+  overflow-x:hidden!important;
+  box-sizing:border-box!important;
+}
+body.wp-admin #wpcontent{
+  padding-left:20px!important;
+}
+.him-wrap,
+.him-frontend-wrap{
+  width:100%!important;
+  max-width:100%!important;
+  overflow-x:hidden!important;
+  box-sizing:border-box!important;
+}
+.him-wrap > form,
+.him-wrap .table-scroll,
+.him-frontend-wrap > form,
+.him-frontend-wrap .table-scroll{
+  width:100%!important;
+  max-width:100%!important;
+  overflow-x:hidden!important;
+  box-sizing:border-box!important;
+}
+.him-wrap table.him-management-compact-table,
+.him-frontend-wrap table.him-management-compact-table{
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  table-layout:fixed!important;
+  border-collapse:collapse!important;
+}
+.him-wrap table.him-management-compact-table col.him-col-check,
+.him-frontend-wrap table.him-management-compact-table col.him-col-check{width:3%!important;}
+.him-wrap table.him-management-compact-table col.him-col-srno,
+.him-frontend-wrap table.him-management-compact-table col.him-col-srno{width:5%!important;}
+.him-wrap table.him-management-compact-table col.him-col-tag,
+.him-frontend-wrap table.him-management-compact-table col.him-col-tag{width:8%!important;}
+.him-wrap table.him-management-compact-table col.him-col-inventory,
+.him-frontend-wrap table.him-management-compact-table col.him-col-inventory{width:31%!important;}
+.him-wrap table.him-management-compact-table col.him-col-status,
+.him-frontend-wrap table.him-management-compact-table col.him-col-status{width:11%!important;}
+.him-wrap table.him-management-compact-table col.him-col-pictures,
+.him-frontend-wrap table.him-management-compact-table col.him-col-pictures{width:9%!important;}
+.him-wrap table.him-management-compact-table col.him-col-city,
+.him-frontend-wrap table.him-management-compact-table col.him-col-city{width:8%!important;}
+.him-wrap table.him-management-compact-table col.him-col-district,
+.him-frontend-wrap table.him-management-compact-table col.him-col-district{width:8%!important;}
+.him-wrap table.him-management-compact-table col.him-col-action,
+.him-frontend-wrap table.him-management-compact-table col.him-col-action{width:17%!important;}
+.him-wrap table.him-management-compact-table th,
+.him-wrap table.him-management-compact-table td,
+.him-frontend-wrap table.him-management-compact-table th,
+.him-frontend-wrap table.him-management-compact-table td{
+  padding:8px 5px!important;
+  min-width:0!important;
+  max-width:none!important;
+  box-sizing:border-box!important;
+  white-space:normal!important;
+  overflow-wrap:break-word!important;
+  word-break:normal!important;
+  vertical-align:middle!important;
+  font-size:13px!important;
+  line-height:1.35!important;
+}
+.him-wrap table.him-management-compact-table th:nth-child(1),
+.him-wrap table.him-management-compact-table td:nth-child(1),
+.him-frontend-wrap table.him-management-compact-table th:nth-child(1),
+.him-frontend-wrap table.him-management-compact-table td:nth-child(1){width:3%!important;text-align:center!important;padding-left:2px!important;padding-right:2px!important;}
+.him-wrap table.him-management-compact-table th:nth-child(2),
+.him-wrap table.him-management-compact-table td:nth-child(2),
+.him-frontend-wrap table.him-management-compact-table th:nth-child(2),
+.him-frontend-wrap table.him-management-compact-table td:nth-child(2){width:5%!important;text-align:center!important;}
+.him-wrap table.him-management-compact-table th:nth-child(3),
+.him-wrap table.him-management-compact-table td:nth-child(3),
+.him-frontend-wrap table.him-management-compact-table th:nth-child(3),
+.him-frontend-wrap table.him-management-compact-table td:nth-child(3){width:8%!important;}
+.him-wrap table.him-management-compact-table th:nth-child(4),
+.him-wrap table.him-management-compact-table td:nth-child(4),
+.him-frontend-wrap table.him-management-compact-table th:nth-child(4),
+.him-frontend-wrap table.him-management-compact-table td:nth-child(4){width:31%!important;text-align:left!important;overflow:hidden!important;}
+.him-wrap table.him-management-compact-table th:nth-child(5),
+.him-wrap table.him-management-compact-table td:nth-child(5),
+.him-frontend-wrap table.him-management-compact-table th:nth-child(5),
+.him-frontend-wrap table.him-management-compact-table td:nth-child(5){width:11%!important;text-align:center!important;}
+.him-wrap table.him-management-compact-table th:nth-child(6),
+.him-wrap table.him-management-compact-table td:nth-child(6),
+.him-frontend-wrap table.him-management-compact-table th:nth-child(6),
+.him-frontend-wrap table.him-management-compact-table td:nth-child(6){width:9%!important;}
+.him-wrap table.him-management-compact-table th:nth-child(7),
+.him-wrap table.him-management-compact-table td:nth-child(7),
+.him-frontend-wrap table.him-management-compact-table th:nth-child(7),
+.him-frontend-wrap table.him-management-compact-table td:nth-child(7){width:8%!important;}
+.him-wrap table.him-management-compact-table th:nth-child(8),
+.him-wrap table.him-management-compact-table td:nth-child(8),
+.him-frontend-wrap table.him-management-compact-table th:nth-child(8),
+.him-frontend-wrap table.him-management-compact-table td:nth-child(8){width:8%!important;}
+.him-wrap table.him-management-compact-table th:nth-child(9),
+.him-wrap table.him-management-compact-table td:nth-child(9),
+.him-wrap table.him-management-compact-table td.him-action-buttons,
+.him-frontend-wrap table.him-management-compact-table th:nth-child(9),
+.him-frontend-wrap table.him-management-compact-table td:nth-child(9),
+.him-frontend-wrap table.him-management-compact-table td.him-action-buttons{
+  width:17%!important;
+  text-align:left!important;
+  white-space:normal!important;
+  overflow:hidden!important;
+}
+.him-wrap table.him-management-compact-table .him-inventory-summary,
+.him-frontend-wrap table.him-management-compact-table .him-inventory-summary{
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  font-size:13px!important;
+  line-height:1.35!important;
+}
+.him-wrap table.him-management-compact-table .him-inventory-summary .him-inventory-name,
+.him-frontend-wrap table.him-management-compact-table .him-inventory-summary .him-inventory-name{
+  font-size:14px!important;
+  margin-bottom:4px!important;
+}
+.him-wrap table.him-management-compact-table td.him-action-buttons .him-action-button-row,
+.him-frontend-wrap table.him-management-compact-table td.him-action-buttons .him-action-button-row{
+  display:flex!important;
+  flex-wrap:nowrap!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:4px!important;
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  overflow:hidden!important;
+}
+.him-wrap table.him-management-compact-table td.him-action-buttons .him-action-btn,
+.him-frontend-wrap table.him-management-compact-table td.him-action-buttons .him-action-btn,
+.him-wrap table.him-management-compact-table td.him-action-buttons .button,
+.him-frontend-wrap table.him-management-compact-table td.him-action-buttons .button{
+  display:inline-flex!important;
+  flex:0 1 auto!important;
+  align-items:center!important;
+  justify-content:center!important;
+  margin:0!important;
+  padding:4px 7px!important;
+  min-width:0!important;
+  min-height:29px!important;
+  height:29px!important;
+  line-height:1!important;
+  font-size:12px!important;
+  white-space:nowrap!important;
+}
+@media(max-width:1100px){
+  .him-wrap .table-scroll,
+  .him-frontend-wrap .table-scroll,
+  body.wp-admin .him-wrap > form > .table-scroll{
+    overflow-x:hidden!important;
+  }
+  .him-wrap table.him-management-compact-table,
+  .him-frontend-wrap table.him-management-compact-table,
+  body.wp-admin .him-wrap > form > .table-scroll table.him-management-compact-table{
+    min-width:0!important;
+    width:100%!important;
+  }
+  .him-wrap table.him-management-compact-table th,
+  .him-wrap table.him-management-compact-table td,
+  .him-frontend-wrap table.him-management-compact-table th,
+  .him-frontend-wrap table.him-management-compact-table td{
+    padding:6px 3px!important;
+    font-size:12px!important;
+  }
+  .him-wrap table.him-management-compact-table td.him-action-buttons .him-action-btn,
+  .him-frontend-wrap table.him-management-compact-table td.him-action-buttons .him-action-btn,
+  .him-wrap table.him-management-compact-table td.him-action-buttons .button,
+  .him-frontend-wrap table.him-management-compact-table td.him-action-buttons .button{
+    padding:3px 5px!important;
+    font-size:11px!important;
+    height:27px!important;
+    min-height:27px!important;
+  }
+}
+
+/* v2.8.18 - View page design only (frontend + backend). No management/form style changes. */
+body.wp-admin .him-detail-page-wrap,
+body:not(.wp-admin) .him-detail-page-wrap{
+  max-width:1180px!important;
+  margin:18px auto!important;
+  padding:0 14px!important;
+  box-sizing:border-box!important;
+}
+body.wp-admin .him-detail-page-wrap{
+  margin-left:0!important;
+  margin-right:20px!important;
+}
+body.wp-admin .him-detail-page-card,
+body:not(.wp-admin) .him-detail-page-card{
+  background:#fff!important;
+  border:1px solid #e5e7eb!important;
+  border-radius:16px!important;
+  padding:16px!important;
+  box-shadow:0 8px 22px rgba(15,23,42,.06)!important;
+  max-width:100%!important;
+}
+body.wp-admin .him-detail-top-actions,
+body:not(.wp-admin) .him-detail-top-actions{
+  margin:0 0 12px!important;
+}
+body.wp-admin .him-back-management-btn,
+body:not(.wp-admin) .him-back-management-btn{
+  border-radius:8px!important;
+  min-height:34px!important;
+  padding:7px 13px!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  line-height:1.2!important;
+}
+body.wp-admin .him-detail-page-head,
+body:not(.wp-admin) .him-detail-page-head{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) 190px!important;
+  gap:14px!important;
+  align-items:stretch!important;
+  margin:0 0 14px!important;
+  padding:0 0 14px!important;
+  border-bottom:1px solid #e5e7eb!important;
+}
+body.wp-admin .him-detail-page-head > div:first-child,
+body:not(.wp-admin) .him-detail-page-head > div:first-child{
+  width:auto!important;
+  max-width:100%!important;
+  background:#f8fafc!important;
+  border:1px solid #e5e7eb!important;
+  border-radius:13px!important;
+  padding:13px 15px!important;
+  box-sizing:border-box!important;
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:center!important;
+}
+body.wp-admin .him-detail-page-head h2,
+body:not(.wp-admin) .him-detail-page-head h2{
+  margin:0 0 6px!important;
+  font-size:22px!important;
+  line-height:1.2!important;
+  color:#0f172a!important;
+  font-weight:700!important;
+}
+body.wp-admin .him-detail-page-head p,
+body:not(.wp-admin) .him-detail-page-head p{
+  margin:0!important;
+  color:#475569!important;
+  font-size:13px!important;
+}
+body.wp-admin .him-detail-page-qr,
+body:not(.wp-admin) .him-detail-page-qr{
+  min-width:0!important;
+  width:190px!important;
+  max-width:190px!important;
+  background:#f8fafc!important;
+  border:1px solid #e5e7eb!important;
+  border-radius:13px!important;
+  padding:10px!important;
+  text-align:center!important;
+  box-sizing:border-box!important;
+}
+body.wp-admin .him-detail-page-qr .him-detail-title,
+body:not(.wp-admin) .him-detail-page-qr .him-detail-title{
+  margin:0 0 6px!important;
+  font-size:12px!important;
+  font-weight:700!important;
+  color:#334155!important;
+}
+body.wp-admin .him-detail-page-qr .him-inline-qr-canvas,
+body:not(.wp-admin) .him-detail-page-qr .him-inline-qr-canvas{
+  width:125px!important;
+  height:auto!important;
+  max-width:125px!important;
+  display:block!important;
+  margin:0 auto 8px!important;
+}
+body.wp-admin .him-detail-page-qr .button,
+body:not(.wp-admin) .him-detail-page-qr .button{
+  min-height:30px!important;
+  padding:5px 8px!important;
+  font-size:12px!important;
+  line-height:1.2!important;
+}
+body.wp-admin .him-detail-page-card h2,
+body:not(.wp-admin) .him-detail-page-card h2{
+  margin:13px 0 8px!important;
+  padding:8px 10px!important;
+  background:#f1f5f9!important;
+  border-left:4px solid #2271b1!important;
+  border-radius:9px!important;
+  font-size:15px!important;
+  line-height:1.25!important;
+  color:#0f172a!important;
+  font-weight:700!important;
+}
+body.wp-admin .him-detail-page-grid,
+body:not(.wp-admin) .him-detail-page-grid{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:9px!important;
+  margin:0 0 12px!important;
+}
+body.wp-admin .him-detail-page-grid .him-detail-item,
+body:not(.wp-admin) .him-detail-page-grid .him-detail-item{
+  background:#fff!important;
+  border:1px solid #e5e7eb!important;
+  border-radius:10px!important;
+  padding:9px 10px!important;
+  min-height:56px!important;
+  box-sizing:border-box!important;
+}
+body.wp-admin .him-detail-page-grid .him-detail-item strong,
+body:not(.wp-admin) .him-detail-page-grid .him-detail-item strong{
+  display:block!important;
+  margin:0 0 4px!important;
+  font-size:10px!important;
+  line-height:1.2!important;
+  color:#64748b!important;
+  text-transform:uppercase!important;
+  letter-spacing:.035em!important;
+  font-weight:700!important;
+}
+body.wp-admin .him-detail-page-grid .him-detail-item span,
+body:not(.wp-admin) .him-detail-page-grid .him-detail-item span{
+  display:block!important;
+  font-size:13px!important;
+  line-height:1.3!important;
+  color:#0f172a!important;
+  font-weight:500!important;
+  word-break:normal!important;
+  overflow-wrap:anywhere!important;
+}
+body.wp-admin .him-detail-page-images,
+body:not(.wp-admin) .him-detail-page-images{
+  display:grid!important;
+  grid-template-columns:repeat(auto-fill,minmax(92px,105px))!important;
+  gap:9px!important;
+  margin-top:6px!important;
+}
+body.wp-admin .him-detail-page-images img,
+body:not(.wp-admin) .him-detail-page-images img{
+  width:100px!important;
+  height:76px!important;
+  object-fit:cover!important;
+  border-radius:9px!important;
+  border:1px solid #e5e7eb!important;
+  cursor:zoom-in!important;
+}
+body.wp-admin .him-detail-page-card table,
+body:not(.wp-admin) .him-detail-page-card table{
+  width:100%!important;
+  border-collapse:collapse!important;
+  margin-top:6px!important;
+}
+body.wp-admin .him-detail-page-card table th,
+body.wp-admin .him-detail-page-card table td,
+body:not(.wp-admin) .him-detail-page-card table th,
+body:not(.wp-admin) .him-detail-page-card table td{
+  padding:7px 8px!important;
+  font-size:12px!important;
+  line-height:1.3!important;
+  border:1px solid #e5e7eb!important;
+  vertical-align:middle!important;
+}
+body.wp-admin .him-detail-page-card table th,
+body:not(.wp-admin) .him-detail-page-card table th{
+  background:#f8fafc!important;
+  color:#0f172a!important;
+  font-weight:700!important;
+}
+@media(max-width:1100px){
+  body.wp-admin .him-detail-page-grid,
+  body:not(.wp-admin) .him-detail-page-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;}
+}
+@media(max-width:900px){
+  body.wp-admin .him-detail-page-wrap,
+  body:not(.wp-admin) .him-detail-page-wrap{margin:12px auto!important;max-width:100%!important;padding:0 10px!important;}
+  body.wp-admin .him-detail-page-head,
+  body:not(.wp-admin) .him-detail-page-head{grid-template-columns:1fr!important;}
+  body.wp-admin .him-detail-page-qr,
+  body:not(.wp-admin) .him-detail-page-qr{width:100%!important;max-width:100%!important;}
+  body.wp-admin .him-detail-page-grid,
+  body:not(.wp-admin) .him-detail-page-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+}
+@media(max-width:560px){
+  body.wp-admin .him-detail-page-card,
+  body:not(.wp-admin) .him-detail-page-card{padding:12px!important;}
+  body.wp-admin .him-detail-page-grid,
+  body:not(.wp-admin) .him-detail-page-grid{grid-template-columns:1fr!important;}
+  body.wp-admin .him-detail-page-images,
+  body:not(.wp-admin) .him-detail-page-images{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+  body.wp-admin .him-detail-page-images img,
+  body:not(.wp-admin) .him-detail-page-images img{width:100%!important;height:105px!important;}
+}
